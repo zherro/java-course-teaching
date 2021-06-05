@@ -1,5 +1,7 @@
 package br.com.tdstecnologia.registrodeproducao;
 
+import java.util.UUID;
+
 /*
  	1 - Crie uma classe de nome Produto, sua classe deve ter o seguintes atributos:
 		1. id do tipo inteiro
@@ -7,7 +9,7 @@ package br.com.tdstecnologia.registrodeproducao;
 		3. custoDeProducao de um tipo com ponto flutuante
  */
 public class Produto {
-	long id;
+	String id = UUID.randomUUID().toString();
 	String descricao;
 	double custoProducao;
 	

@@ -14,10 +14,28 @@ package br.com.tdstecnologia.registrodeproducao;
 	tamanho 5. Cada item do array deve ser um nome de produto
  */
 public class RegistroDeProducao {
-	static int registroSemanal[][][] = new int[7][5][2];
+	
+	static int registroSemanal[][][] = new int[8][5][2];
 
-	static String[] diasDaSemana = new String[]{ "Domingo", "Segunda-ferira","Terça-feira",
-									 "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"};
+	/*
+	 	
+	 	
+	 	diasDaSemana = tamanho 8 posicoes
+	 	
+	 	{0} = "Domingo"
+	 	{1} = "Segunda-feira"
+	 	{2} = "Terça-feira"
+		{3} = "Quarta-feira"
+		{4} = "Quinta-feira"
+		{5} = "Sexta-feira"
+		{6} = "Sábado"
+		{7} = "Dia-da-Breja"
+	
+	
+	 */
+	static String[] diasDaSemana = new String[]{ "Domingo", "Segunda-feira","Terça-feira",
+									 "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado",
+									 "Dia-da-Breja"};
 	
 	static String produtos[] = new String[5];
 	
@@ -28,7 +46,7 @@ public class RegistroDeProducao {
 		teste = 0;
 		produtos[0] = "Produto1";
 		produtos[1] = "Produto2";
-		produtos[2] = "Produto3";
+		produtos[2] = "Garrafa De Agua";
 		produtos[3] = "Produto4";
 		produtos[4] = "Produto5"; 
 	}
