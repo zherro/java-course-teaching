@@ -1,48 +1,56 @@
 package br.com.tdstecnologia.registrodeproducao;
 
-/*
- 	- Criar uma classe com nome ExecutarLinhaDeProducao.
- 	- Cria um método chamado executarLinha
-	
-	- o método executarLinha deve receber um inteiro como parâmetro
-	
-	- Então crie uma instância da classe Fabrica,
-	 através dessa instância execute o método produzir da classe 
-	 Fabrica e passa o parâmetro recebido
-	 
-	- criar uma variável que receba o retorno do método produzir da Fabrica e
-	imprimir as informações do produto produzido
 
- */
 public class ExecutarLinhaDeProducao {
 
-	public void executarLinha(int teste) {
-		Fabrica fabrica = new Fabrica();
+	public void imprimirRegistro() {
+		
+		// for para percorrer o nosso array
+		for(int i=0; i < RegistroDeProducao.diasDaSemana.length; i++) {
+			
+			System.out.print( "___________________________________\n\n");
+			System.out.println(" ---> " + RegistroDeProducao.diasDaSemana[i]  );
+			
+			for(int n=0; n < RegistroDeProducao.produtos.length; n++) {
+				
+				if( RegistroDeProducao.registroSemanal[i][n][0] > 0 ) {
 
-		Produto produtoCriado = fabrica.produzir(teste);
-//		Produto produtoCriado = new Produto();
+					 System.out.println("Nome :" + RegistroDeProducao.produtos[n] );
+					 
+					 System.out.println("Execuções: " + 
+							 RegistroDeProducao.registroSemanal[i][n][0] );
+					 
+					 System.out.println("Qtd produzida: " + 
+							 RegistroDeProducao.registroSemanal[i][n][1] );
+					 
+					
+//						   FAÇA: [ recupere o nome do produto com base no array
+//					       RegistroDeProducao.produtos e o imprima ]
+//					       FAÇA: [ imprima o número de execuções de esteira para o produto ]
+//					       FAÇA: [ imprima a quantidade de produtos produzidas ]
+					
+					System.out.println("=====\n");
 
-		System.out.println(" Produto Criado ----------- ");
-		System.out.println(" ID:" + produtoCriado.id);
-		System.out.println(" Nome:" + produtoCriado.descricao);
-		System.out.println("--");
-	}
-	
-	public void executarLinhaProduto1() {
-		executarLinha(0);
-	}
-	
+				}
+				
+				
+			}
+			
+		} // FIM DO FOR
 
-	public void executarLinhaProduto2() {
-		executarLinha(1);
 	}
-	
+
 	public static void main(String[] args) {
-//		new ExecutarLinhaDeProducao().executarLinha(0);
+		
+		Fabrica fabrica = new Fabrica();
+		fabrica.executarLinhaDeProducao("LINHA01", 5, 3);
+		
+		fabrica.executarLinhaDeProducao("LINHA_PRODUCAO_AGUA", 3, 1);
+		fabrica.executarLinhaDeProducao("LINHA_PRODUCAO_AGUA", 3, 1);
+		fabrica.executarLinhaDeProducao("LINHA_PRODUCAO_AGUA", 3, 1);
+		
 
-		ExecutarLinhaDeProducao executar = new ExecutarLinhaDeProducao();
-		executar.executarLinhaProduto1();
-		executar.executarLinhaProduto2();
+		new ExecutarLinhaDeProducao().imprimirRegistro();
 	}
 	
 }
